@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add platform</title>
+
+    <link rel="stylesheet" th:href="@{/styles/common.css}">
+</head>
+
+<body>
+<nav class="menu">
+    <ul>
+        <li><a th:href="@{/platforms}">Platform</a></li>
+        <li><a th:href="@{/genres}">Genres</a></li>
+        <li><a th:href="@{/games}">Computer Games</a></li>
+    </ul>
+</nav>
+<h1>Add platform</h1>
+<form th:action="@{/add-platform}" th:object="${addPlatformForm}" method="POST" class="addform">
+    <input type="text" placeholder="Enter platform name" th:field="*{name}"/>
+    <td><input type="submit" class="btn btn-success" value="Add"/></td>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform</title>
+
+    <link rel="stylesheet" th:href="@{styles/common.css}">
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a th:href="@{/platforms}">Platform</a></li>
+            <li><a th:href="@{/genres}">Genres</a></li>
+            <li><a th:href="@{/games}">Computer Games</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
+        <h1>Genres</h1>
+        <a th:href="@{/add-genre}">
+            <button id="addGenreBtn"> Add new genre</button>
+        </a>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="genre : ${allGenres}">
+                <td th:utext="${genre.genreId}">..</td>
+                <td th:utext="${genre.name}">..</td>
+                <td>
+                    <div class="action-dropdown">
+                        <button class="dropbtn">Actions</button>
+                        <div class="dropdown-content">
+                            <form th:action="@{/update-genre/{genreId}(genreId = ${genre.genreId})}"
+                                  th:method="get">
+                                <button class="editBtn">Edit</button>
+                            </form>
+                            <form th:action="@{/delete-genre/{genreId}(genreId = ${genre.genreId})}"
+                                  th:method="delete">
+                                <button class="deleteBtn">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

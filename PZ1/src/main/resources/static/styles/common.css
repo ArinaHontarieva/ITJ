@@ -1,0 +1,174 @@
+/* меню */
+.menu {
+    background-color: #365350;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menu ul li {
+    flex-grow: 1;
+}
+
+.menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: #1e2b2a;
+}
+
+.content-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* основа */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #365350;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #192826;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+    margin: 20px auto 0;
+}
+
+th, td {
+    border: 1px solid #ecf0f1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #365350;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+tr:hover {
+    background-color: #d5dbdb;
+}
+
+.action-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+    z-index: 1;
+    border: 1px solid #000000;
+}
+
+.dropdown-content button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.action-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.editBtn {
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.deleteBtn {
+    cursor: pointer;
+    color: #ff0000;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.editBtn:hover, .deleteBtn:hover {
+    background-color: #ecf0f1;
+}
+
+/* добавление */
+.addform {
+    mmargin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #365350;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #192826;
+}

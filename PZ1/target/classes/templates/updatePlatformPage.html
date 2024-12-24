@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update platform</title>
+
+    <link rel="stylesheet" th:href="@{/styles/common.css}">
+</head>
+
+<body>
+<nav class="menu">
+    <ul>
+        <li><a th:href="@{/platforms}">Platform</a></li>
+        <li><a th:href="@{/genres}">Genres</a></li>
+        <li><a th:href="@{/games}">Computer Games</a></li>
+    </ul>
+</nav>
+<h1>Update platform</h1>
+<form th:action="@{/update-platform}" th:object="${platformToUpdate}" method="POST">
+    <input type="hidden" th:field="*{platformId}" />
+    <input type="text" placeholder="Enter platform name" th:field="*{name}" />
+    <td><input type="submit" class="btn btn-success" value="Update" /></td>
+</form>
+</body>
+
+</html>

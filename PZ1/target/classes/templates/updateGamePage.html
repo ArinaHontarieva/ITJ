@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update game</title>
+
+    <link rel="stylesheet" th:href="@{/styles/common.css}">
+</head>
+
+<body>
+<nav class="menu">
+    <ul>
+        <li><a th:href="@{/platforms}">Platform</a></li>
+        <li><a th:href="@{/genres}">Genres</a></li>
+        <li><a th:href="@{/games}">Computer Games</a></li>
+    </ul>
+</nav>
+<h1>Add game</h1>
+<form th:action="@{/update-game}" th:object="${gameToUpdate}" method="POST">
+    <input type="hidden" th:field="*{gameId}" />
+    <input type="text" placeholder="Enter game name" th:field="*{name}" />
+    <input type="text" placeholder="Enter publisher name" th:field="*{publisher}" />
+    <input type="text" placeholder="Enter release year" th:field="*{releaseYear}" />
+
+    <select th:field="*{genreId}">
+        <option th:each="genre : ${allGenres}"
+                th:value="${genre.genreId}"
+                th:text="${genre.name}"
+                th:selected="${genre.genreId == gameToUpdate.genreId}"></option>
+    </select>
+
+    <input type="text" placeholder="Enter price" th:field="*{price}" />
+
+    <select th:field="*{platformId}">
+        <option th:each="platform : ${allPlatforms}"
+                th:value="${platform.platformId}"
+                th:text="${platform.name}"
+                th:selected="${platform.platformId == gameToUpdate.platformId}"></option>
+    </select>
+    <td><input type="submit" class="btn btn-success" value="Update" /></td>
+</form>
+</body>
+
+</html>

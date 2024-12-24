@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add game</title>
+
+    <link rel="stylesheet" th:href="@{/styles/common.css}">
+</head>
+
+<body>
+<nav class="menu">
+    <ul>
+        <li><a th:href="@{/platforms}">Platform</a></li>
+        <li><a th:href="@{/genres}">Genres</a></li>
+        <li><a th:href="@{/games}">Computer Games</a></li>
+    </ul>
+</nav>
+<h1>Add game</h1>
+<form th:action="@{/add-game}" th:object="${addUpdateGameForm}" method="POST" class="addform">
+    <label for="gameName">Game Name:</label>
+    <input type="text" id="gameName" placeholder="Enter game name" th:field="*{name}"/>
+
+    <label for="publisherName">Publisher Name:</label>
+    <input type="text" id="publisherName" placeholder="Enter publisher name" th:field="*{publisher}"/>
+
+    <label for="releaseYear">Release Year:</label>
+    <input type="text" id="releaseYear" placeholder="Enter release year" th:field="*{releaseYear}"/>
+
+    <label for="genreId">Genre ID:</label>
+    <input type="text" id="genreId" placeholder="Enter genre id" th:field="*{genreId}"/>
+
+    <label for="gamePrice">Price:</label>
+    <input type="text" id="gamePrice" placeholder="Enter price" th:field="*{price}"/>
+
+    <label for="platformId">Platform ID:</label>
+    <input type="text" id="platformId" placeholder="Enter platform id" th:field="*{platformId}"/>
+
+    <td><input type="submit" class="btn btn-success" value="Add"/></td>
+</form>
+
+</body>
+
+</html>
